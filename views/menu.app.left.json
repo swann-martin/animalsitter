@@ -1,0 +1,41 @@
+{
+    "name": "Project menu",
+    "access": {
+      "groups": [
+        "project.default.animalsitter"
+      ]
+    },
+    "layout": {
+      "items": [
+        {
+          "id": "project.project.test",
+          "label": "animalsitter",
+          "description": "",
+          "icon": "menu_book",
+          "type": "parent",
+          "children": [
+            {
+              "id": "project.project.user",
+              "type": "entry",
+              "label": "Users",
+              "description": "Users of the app",
+              "context": {
+                "entity": "animalsitter\\User",
+                "view": "list.default"
+              }
+            },
+            {
+              "id": "project.project.animal",
+              "type": "entry",
+              "label": "Animals",
+              "description": "List of the animals",
+              "context": {
+                "entity": "animalsitter\\animal\\Animal",
+                "view": "list.default"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }

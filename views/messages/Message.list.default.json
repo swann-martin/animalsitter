@@ -1,0 +1,42 @@
+{
+    "name": "Messages",
+    "description": "",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "user_id",
+                "width": "25%",
+                "label": "from"
+            },
+            {
+                "type": "field",
+                "value": "responder",
+                "width": "25%",
+                "label": "to"
+            },
+            {
+                "type": "field",
+                "value": "content",
+                "width": "50%",
+                "widget": {
+                    "link": true,
+                    "usage": "text"
+                }
+            },
+            {
+                "type": "field",
+                "value": "modified",
+                "width": "20%",
+                "widget": {
+                    "sortable": true
+                }
+            }
+        ]
+    }
+}

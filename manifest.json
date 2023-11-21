@@ -1,0 +1,29 @@
+{
+    "name": "animalsitter",
+    "description": "Application animalsitter, an app to book a petsitter",
+    "version": "1.0",
+    "author": "YesBabylon",
+    "license": "LGPL-3",
+    "depends_on": [ "core" ],
+    "apps": [
+        {
+          "id": "Animal",
+          "name": "Animal",
+          "extends": "app",
+          "description": "Application animalsitter, an app to book a petsitter",
+          "icon": "ad_units",
+          "color": "#3498DB",
+          "access": {
+            "groups": [
+              "users"
+            ]
+          },
+          "params": {
+            "menus": {
+              "left": "app.left"
+            }
+          }
+        }
+      ],
+    "tags": [ ]
+}

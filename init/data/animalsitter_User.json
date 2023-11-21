@@ -1,0 +1,35 @@
+[
+  {
+    "name": "animalsitter\\User",
+    "lang": "en",
+    "data": [
+      {
+        "id": 1,
+        "name": "Jean",
+        "city" : "Bruxelles",
+        "avatar" : "https://randomuser.me/api/portraits/men/3.jpg",
+        "messages_ids" : [1]
+      },
+      {
+        "id": 2,
+        "name": "Marie",
+        "city" : "Evere",
+        "avatar" : "https://randomuser.me/api/portraits/women/3.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Madeleine",
+        "city" : "Evere",
+        "avatar" : "https://randomuser.me/api/portraits/women/4.jpg",
+        "ispetsitter": true
+      },
+      {
+        "id": 4,
+        "name": "Bertrand",
+        "city" : "Bruxelles",
+        "avatar" : "https://randomuser.me/api/portraits/women/4.jpg",
+        "ispetsitter": true
+      }
+    ]
+  }
+]

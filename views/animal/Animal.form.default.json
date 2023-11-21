@@ -1,0 +1,71 @@
+{
+    "name": "Animal",
+    "description": "Simple form to create animals",
+    "actions": [],
+    "layout": {
+        "groups": [
+            {
+                "id": "group.0",
+                "sections": [
+                    {
+                        "id": "section.0",
+                        "rows": [
+                            {
+                                "id": "row.0",
+                                "columns": [
+                                    {
+                                        "id": "column.0",
+                                        "width": "80%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "id",
+                                                "width": "5%",
+                                                "readonly": true
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "name",
+                                                "width": "20%",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "picture",
+                                                "width": "40%",
+                                                "label": "Picture"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "birthday",
+                                                "width": "20%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "color",
+                                                "width": "20%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "user_id",
+                                                "width": "20%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "age",
+                                                "width": "20%",
+                                                "widget": {
+                                                    "visible": ["birthday", ">", 0]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

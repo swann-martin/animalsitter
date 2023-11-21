@@ -1,0 +1,52 @@
+{
+    "limit": 25,
+    "order": "name",
+    "operations": {
+        "total": {
+            "id": {
+                "usage": "numeric\/integer",
+                "operation": "COUNT",
+                "suffix": "p."
+            }
+        }
+    },
+    "name": "Animal",
+    "description": "All information about animals.",
+    "domain": [],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "15%",
+                "label": "Name"
+            },
+            {
+                "type": "field",
+                "value": "picture",
+                "width": "40%",
+                "label": "Picture"
+            },
+            {
+                "type": "field",
+                "value": "birthday",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "age",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "color",
+                "width": "10%"
+            }
+        ]
+    }
+}
