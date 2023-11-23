@@ -1,26 +1,29 @@
 [
     {
-      "name": "animalsitter\\messages\\Message",
+      "name": "animalsitter\\Message",
       "lang": "en",
       "data": [
         {
           "id": 1,
-
-          "responder" : 3,
+          "sender_id" : 1,
+          "responder_id" : 3,
           "content" : "Hello, Madeleine tu peux garder mon chat?",
-          "user_id" : 1
+          "app_users_ids" : [1,3]
         },
         {
           "id": 2,
-          "responder" : 3,
+          "sender_id":1,
+          "responder_id" : 3,
           "content" : "stp?",
-          "user_id" : 1
+          "app_users_ids" : [1,3]
+
         },
         {
           "id": 3,
-          "responder": 1,
+          "sender_id": 3,
+          "responder_id": 1,
           "content" : "Oui mais quand?",
-          "user_id" : 3
+          "app_users_ids" : [3,1]
         }
       ]
     }

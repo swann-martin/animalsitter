@@ -14,7 +14,7 @@ list($params, $providers) = eQual::announce([
         'entity' =>  [
             'description'   => 'name',
             'type'          => 'string',
-            'default'       => 'animalsitter\User'
+            'default'       => 'animalsitter\AppUser'
         ],
         'city' => [
             'type'          => 'string',
@@ -46,5 +46,5 @@ $params['domain'] = $domain;
 $result = eQual::run('get', 'model_collect', $params, true); //always true, it return array.
 
 $context->httpResponse()
-        ->body($result)
+        ->body($list)
         ->send();

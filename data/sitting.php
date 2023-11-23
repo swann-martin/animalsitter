@@ -1,7 +1,9 @@
 <?php
 
+use animalsitter\Sitting;
+
 list($params, $providers) = eQual::announce([
-    'description'   => 'This is the animalsitter_message controller created with core_config_create-controller.',
+    'description'   => 'This is the animalsitter_sitting controller created with core_config_create-controller.',
     'response'      => [
         'charset'       => 'utf-8',
         'accept-origin' => '*'
@@ -20,7 +22,10 @@ list($params, $providers) = eQual::announce([
  */
 $context = $providers['context'];
 
-// controller logic goes here
+$list = Sitting::search([])
+        ->read(['name'])
+        ->adapt('json')
+        ->get(true);
 
 $context->httpResponse()
         ->status(200)

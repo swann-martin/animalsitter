@@ -1,7 +1,7 @@
 <?php
 use animalsitter\animal\Animal;
 
-list($params, $providers) = announce([
+list($params, $providers) = eQual::announce([
     'description'   => 'Retrieve the list of existing animals',
     'params'        => [],
     'response'      => [
@@ -15,10 +15,9 @@ list($params, $providers) = announce([
 list($context) = [ $providers['context'] ];
 
 $list = Animal::search([])
-        ->read(['id','name', 'age', 'description', 'user_id'])
-        ->adapt('txt')
+        ->read(['id','name', 'age', 'description'])
+        ->adapt('json')
         ->get(true);
 
 $context->httpResponse()
-        ->body($list)
         ->send();

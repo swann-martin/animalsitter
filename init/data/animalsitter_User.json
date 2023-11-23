@@ -1,6 +1,6 @@
 [
   {
-    "name": "animalsitter\\User",
+    "name": "animalsitter\\AppUser",
     "lang": "en",
     "data": [
       {
@@ -21,14 +21,14 @@
         "name": "Madeleine",
         "city" : "Evere",
         "avatar" : "https://randomuser.me/api/portraits/women/4.jpg",
-        "ispetsitter": true
+        "is_pet_sitter": true
       },
       {
         "id": 4,
         "name": "Bertrand",
         "city" : "Bruxelles",
         "avatar" : "https://randomuser.me/api/portraits/women/4.jpg",
-        "ispetsitter": true
+        "is_pet_sitter": true
       }
     ]
   }

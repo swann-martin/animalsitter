@@ -1,0 +1,47 @@
+{
+    "limit": 25,
+    "order": "name",
+    "operations": {
+        "total": {
+            "id": {
+                "usage": "numeric\/integer",
+                "operation": "COUNT",
+                "suffix": "p."
+            }
+        }
+    },
+    "name": "User",
+    "description": "All information about users.",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "25%",
+                "label": "name"
+            },
+            {
+                "type": "field",
+                "value": "is_pet_sitter",
+                "width": "25%",
+                "label": "Sitter"
+            },
+            {
+                "type": "field",
+                "value": "avatar",
+                "width": "30%",
+                "label": "Avatar"
+            },
+            {
+                "type": "field",
+                "value": "city",
+                "width": "20%"
+            }
+        ]
+    }
+}

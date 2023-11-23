@@ -22,25 +22,29 @@
                                         "items": [
                                             {
                                                 "type": "field",
-                                                "value": "user_id",
+                                                "value": "sender_id",
                                                 "width": "25%",
                                                 "label": "from"
                                             },
                                             {
                                                 "type": "field",
-                                                "value": "responder",
+                                                "value": "responder_id",
                                                 "width": "25%",
                                                 "label": "to",
                                                 "widget": {
                                                     "domain": [
                                                         [
                                                             [
-                                                                "ispetsitter",
+                                                                "is_pet_sitter",
                                                                 "=",
-                                                                "true"
+                                                                true
+                                                            ],
+                                                            [
+                                                                "id",
+                                                                "<>",
+                                                                "object.sender_id"
                                                             ]
-                                                        ],
-                                                        []
+                                                        ]
                                                     ]
                                                 }
                                             },

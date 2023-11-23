@@ -1,7 +1,7 @@
 <?php
-use animalsitter\User;
+use animalsitter\AppUser;
 
-list($params, $providers) = announce([
+list($params, $providers) = eQual::announce([
     'description'   => 'Retrieve the list of existing users',
     'params'        => [],
     'response'      => [
@@ -14,9 +14,9 @@ list($params, $providers) = announce([
 
 list($context) = [ $providers['context'] ];
 
-$list = User::search([])
+$list = AppUser::search([])
         ->read(['id','name', 'email','city'])
-        ->adapt('txt')
+        ->adapt('json')
         ->get(true);
 
 $context->httpResponse()

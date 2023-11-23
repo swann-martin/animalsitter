@@ -1,0 +1,77 @@
+{
+    "name": "Sitting",
+    "description": "Form to create sitting",
+    "layout": {
+        "groups": [
+            {
+                "label": "New Group",
+                "id": "group.0",
+                "sections": [
+                    {
+                        "label": "New Sitting",
+                        "id": "section.0",
+                        "rows": [
+                            {
+                                "id": "row.0",
+                                "label": "Sitting Row",
+                                "columns": [
+                                    {
+                                        "id": "column.0",
+                                        "label": "New Column",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "sitter_id",
+                                                "width": "25%",
+                                                "label": "Select a Sitter",
+                                                "widget": {
+                                                    "domain": [
+                                                        [
+                                                            "is_pet_sitter",
+                                                            "=",
+                                                            true
+                                                        ],
+                                                        [
+                                                            "id",
+                                                            "<>",
+                                                            "object.id"
+                                                        ]
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "animals_ids",
+                                                "width": "25%",
+                                                "label": "Animal"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date",
+                                                "width": "25%",
+                                                "label": "Date"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "time_from",
+                                                "width": "25%",
+                                                "label": "From"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "time_to",
+                                                "width": "25%",
+                                                "label": "To"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

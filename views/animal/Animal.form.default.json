@@ -8,6 +8,7 @@
                 "id": "group.0",
                 "sections": [
                     {
+                        "label" : "Animal",
                         "id": "section.0",
                         "rows": [
                             {
@@ -47,7 +48,7 @@
                                             },
                                             {
                                                 "type": "field",
-                                                "value": "user_id",
+                                                "value": "app_user_id",
                                                 "width": "20%"
                                             },
                                             {
@@ -57,6 +58,29 @@
                                                 "widget": {
                                                     "visible": ["birthday", ">", 0]
                                                 }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Sittings",
+                        "id": "section.project.sittings",
+                        "rows": [
+                            {
+                                "id": "row.11",
+                                "columns": [
+                                    {
+                                        "id": "column.11",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "sittings_ids",
+                                                "width": "100%",
+                                                "label": "Sittings"
                                             }
                                         ]
                                     }

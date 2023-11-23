@@ -12,13 +12,18 @@
     },
     "name": "Animal",
     "description": "All information about animals.",
-    "domain": [],
     "layout": {
         "items": [
             {
                 "type": "field",
                 "value": "id",
                 "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "app_user_id",
+                "width": "10%",
+                "label": "Owner"
             },
             {
                 "type": "field",
@@ -45,6 +50,11 @@
             {
                 "type": "field",
                 "value": "color",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "sittings_ids",
                 "width": "10%"
             }
         ]

@@ -1,0 +1,132 @@
+{
+    "name": "User",
+    "description": "Simple form for displaying employees",
+    "actions": [],
+    "layout": {
+        "groups": [
+            {
+                "id": "group.2",
+                "sections": [
+                    {
+                        "label": "User",
+                        "id": "section.project.users",
+                        "rows": [
+                            {
+                                "id": "row.8",
+                                "columns": [
+                                    {
+                                        "id": "column.8",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "name",
+                                                "width": "25%",
+                                                "label": "name"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_pet_sitter",
+                                                "width": "25%",
+                                                "label": "Sitter"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "avatar",
+                                                "width": "30%",
+                                                "label": "Avatar"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "city",
+                                                "width": "25%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Messages",
+                        "id": "section.project.messages",
+                        "rows": [
+                            {
+                                "id": "row.9",
+                                "columns": [
+                                    {
+                                        "id": "column.9",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "messages_ids",
+                                                "width": "100%",
+                                                "label": "Messages"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Animals",
+                        "id": "section.project.animals",
+                        "rows": [
+                            {
+                                "id": "row.10",
+                                "columns": [
+                                    {
+                                        "id": "column.10",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "animals_ids",
+                                                "width": "100%",
+                                                "label": "Animals"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Sittings",
+                        "id": "section.project.sittings",
+                        "visible": [
+                            [
+                                [
+                                    "is_pet_sitter",
+                                    "=",
+                                    true
+                                ]
+                            ]
+                        ],
+                        "rows": [
+                            {
+                                "id": "row.11",
+                                "columns": [
+                                    {
+                                        "id": "column.11",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "sittings_ids",
+                                                "width": "100%",
+                                                "label": "Animals"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

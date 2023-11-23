@@ -1,0 +1,28 @@
+{
+    "name": "Sitting",
+    "description": "List of sittings.",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "sitter_id",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "date",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "time_from",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "time_to",
+                "width": "25%"
+            }
+        ]
+    }
+}

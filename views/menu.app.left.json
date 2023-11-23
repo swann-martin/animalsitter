@@ -20,7 +20,7 @@
               "label": "Users",
               "description": "Users of the app",
               "context": {
-                "entity": "animalsitter\\User",
+                "entity": "animalsitter\\AppUser",
                 "view": "list.default"
               }
             },

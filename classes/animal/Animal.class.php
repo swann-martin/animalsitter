@@ -19,26 +19,23 @@ class Animal extends Model
     public static function getColumns()
     {
         return [
-            'user_id' => [
+            'app_user_id' => [
                 'type' => 'many2one',
                 'required' => true,
-                'foreign_object' => 'animalsitter\\User',
+                'foreign_object' => 'animalsitter\\AppUser',
                 'ondelete' => 'cascade',
             ],
             'name' => [
-                'usage' => '',
                 'type' => 'string',
                 'description' => 'Name of the animal.',
                 'required' => true,
             ],
             'color' => [
-                'usage' => '',
                 'type' => 'string',
                 'description' => 'Color of the animal.',
                 'required' => true,
             ],
             'description' => [
-                'usage' => '',
                 'type' => 'string',
                 'description' => 'Description and extra information about the animal.',
                 'default' => 'This animal is very nice and will love you',
@@ -69,6 +66,15 @@ class Animal extends Model
                 'store' => true,
                 'result_type' => 'integer',
                 'function' => 'calcAge',
+            ],
+            'sittings_ids' => [
+                'type' => 'many2many',
+                'description' => 'Relation between animals and sitting.',
+                'foreign_object' => 'animalsitter\\Sitting',
+                'foreign_field' => 'animals_ids',
+                'rel_table' => 'animal_rel_animals_sittings',
+                'rel_local_key' => 'animal_id',
+                'rel_foreign_key' => 'sitting_id',
             ],
         ];
     }

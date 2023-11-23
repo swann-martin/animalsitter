@@ -1,19 +1,33 @@
 <?php
 
-use animalsitter\messages\Message;
+use animalsitter\Message;
 
 list($params, $providers) = eQual::announce([
-    'description'   => 'This is the animalsitter_message controller created with core_config_create-controller.',
+    'description'   => 'This is the animalsitter_message controller it retrieves messages.',
     'response'      => [
         'charset'       => 'utf-8',
         'accept-origin' => '*'
     ],
-    'params'        => [],
+    'params'        => [
+        'view_id' => [
+            'description' => 'Message',
+            'type' => 'string',
+            'default' => 'list.default'
+        ],
+        "domain" => [
+            "name"=> "domain",
+            "description"=> "",
+            "type"=> "array",
+            "usage"=> "array/domain",
+            "default"=> ["app_users_ids","contains","sender_id"],
+         ]
+    ],
+
     'access'        => [
         'visibility'    => 'protected',
         'groups'        => ['users']
     ],
-    'providers'         => ['context']
+    'providers'         => ['context', 'orm']
 ]);
 /**
  * @var \equal\php\context  Context
@@ -21,10 +35,11 @@ list($params, $providers) = eQual::announce([
 $context = $providers['context'];
 
 $list = Message::search([])
-        ->read(['name', 'responder'])
-        ->adapt('txt')
+        ->read(['name', 'responder_id',"sender_id", "id", "app_users_ids", "content"])
+        ->adapt('json')
         ->get(true);
 
 $context->httpResponse()
+        ->body($list)
         ->status(200)
         ->send();

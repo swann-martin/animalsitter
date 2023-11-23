@@ -11,7 +11,9 @@ Welcome to the documentation for the eQual Framework and the Animal Sitter appli
 Animal Sitter is an application built on top of the eQual Framework. It is a simple application designed to help manage users, animals, and messages. This documentation will provide insights into the key aspects of the Animal Sitter application.
 
 ### Model Entity relational
-
+<p width="100%" align="center">
+<img src="./assets/animalsitter-uml.drawio.png" alt="UML diagram from draw.io" width="80%"  style="display:flex; self:center"/>
+</p>
 
 ### Prerequisite
 
@@ -161,7 +163,7 @@ Performs consistency checks between DB and class as well as syntax validation fo
 ## 4) Run the application :
 Go to http://equal.local/apps/.
 You will need to log in to be able to use the application.
- - You can use a default user from core package that was created on initialization. You can find the connection details in `/packages/core/init/data.core_User.json`.
+ - You can use a default user from core package that was created on initialization. You can find the connection details in `/packages/core/init/data/core_User.json`.
  - You can also create a user.
 
 ```bash
@@ -237,7 +239,7 @@ use equal\orm\Model;
  * @property string $city User city.
  * @property array $animals_ids
  * @property array $messages_ids
- * @property boolean $ispetsitter True if the user offers to babysit an animal.
+ * @property boolean $is_pet_sitter True if the user offers to babysit an animal.
  */
 class User extends Model
 {
@@ -274,7 +276,7 @@ class User extends Model
                 'foreign_field' => 'user_id',
                 'sort' => 'asc',
             ],
-            'ispetsitter' => [
+            'is_pet_sitter' => [
                 'default' => false,
                 'description' => 'True if the user offers to babysit an animal.',
                 'type' => 'boolean'
@@ -342,7 +344,7 @@ User.list.default.json
         },
         {
           "type": "field",
-          "value": "ispetsitter",
+          "value": "is_pet_sitter",
           "label": "Sitter",
           "width": "25%"
         },
@@ -506,13 +508,13 @@ class Animal extends Model
 
 ## 8) Example of Controller
 
-The controller returns $list 
+The controller returns $list
 
 ```php
 <?php
 use animalsitter\animal\Animal;
 
-list($params, $providers) = announce([
+list($params, $providers) = eQual::announce([
     'description'   => 'Retrieve the list of existing animals',
     'params'        => [],
     'response'      => [
@@ -527,7 +529,7 @@ list($context) = [ $providers['context'] ];
 
 $list = Animal::search([])
         ->read(['id','name', 'age', 'description', 'user_id'])
-        ->adapt('txt')
+        ->adapt('json')
         ->get(true);
 
 $context->httpResponse()
@@ -560,4 +562,27 @@ manifest.json
   "apps": [ "apps", "auth", "app", "settings", "workbench" ],
 }
 
+```
+
+#### Use console to connect
+
+Go to http://equal.local/console.php.
+
+If a message is displayed and says that the logs limit is reached, empty the log file.
+
+```bash
+cd /var/www/html/log
+echo "" > eq_error.log
+```
+
+Check the rights are correctly set.
+
+```bash
+./equal.run --do=test_fs-consistency
+```
+
+
+Check the package consistency
+```bash
+./equal.run --do=test_package-consistency --package=animalsitter
 ```
