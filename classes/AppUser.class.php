@@ -42,7 +42,7 @@ class AppUser extends Model
             'messages_ids' => [
                 'type' => 'many2many',
                 'foreign_object' => 'animalsitter\\Message',
-                'foreign_field' => 'sender_id',
+                'foreign_field' => 'app_users_ids',
                 'rel_table' => 'animal_rel_messages_app_users',
                 'rel_local_key' => 'app_user_id',
                 'rel_foreign_key' => 'message_id',
@@ -57,6 +57,18 @@ class AppUser extends Model
                 'description' => 'Relation between sitters and sitting.',
                 'foreign_object' => 'animalsitter\\Sitting',
                 'foreign_field' => 'sitter_id',
+            ],
+            'sent_messages_ids' => [
+                'type' => 'one2many',
+                'description' => 'Messages sent by the user.',
+                'foreign_object' => 'animalsitter\\Message',
+                'foreign_field' => 'sender_id'
+            ],
+            'received_messages_ids' => [
+                'type' => 'one2many',
+                'description' => 'Messages received by the user.',
+                'foreign_object' => 'animalsitter\\Message',
+                'foreign_field' => 'responder_id'
             ],
         ];
     }

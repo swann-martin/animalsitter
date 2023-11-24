@@ -36,11 +36,6 @@ class Sitting extends Model
                 'description' => 'Id of the sitter.',
                 'foreign_object' => 'animalsitter\\AppUser',
             ],
-            // ({package}_rel_local_foreign or rel_foreign_local)
-            // rel_local_key -> {local_class}_id
-            // rel_foreign_key -> {foreign_class}_id
-
-
             'animals_ids' => [
                 'type' => 'many2many',
                 'description' => 'Relation between animals and sitting.',

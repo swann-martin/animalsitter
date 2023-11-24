@@ -18,8 +18,7 @@ class Message extends Model
             'sender_id' => [
                 'type' => 'many2one',
                 'description' => 'Id of the sender.',
-                'foreign_object' => 'animalsitter\\AppUser',
-                'onupdate' => 'onupdateSenderId'
+                'foreign_object' => 'animalsitter\\AppUser'
             ],
             'responder_id' => [
                 'type' => 'many2one',
@@ -43,18 +42,10 @@ class Message extends Model
         ];
     }
 
-
-    public static function onudateSenderId($self) {
-        $messages = $self->read(['id', 'user_id', 'responder_id']);
-        foreach($messages as $message) {
-            self::id($message['id'])->update(['users_ids' => [$message['sender_id'], $message['responder_id']]]);
-        }
-    }
-
-    public static function onudateResponderId($self) {
+    public static function onupdateResponderId($self) {
         $messages = $self->read(['id', 'sender_id', 'responder_id']);
         foreach($messages as $message) {
-            self::id($message['id'])->update(['users_ids' => [$message['_id'], $message['responder_id']]]);
+            self::id($message['id'])->update(['app_users_ids' => [$message['sender_id'], $message['responder_id']]]);
         }
     }
 
